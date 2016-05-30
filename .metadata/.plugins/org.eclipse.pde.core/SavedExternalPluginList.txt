@@ -1,8 +1,8 @@
-# List of external plug-in models previously loaded. Timestamp: 1464553829209
-file:/C:/Tools/eclipse/plugins/boundingbox_0.1.0.201605292158.jar
-file:/C:/Tools/eclipse/plugins/boundingbox.edit_1.0.0.201605292158.jar
-file:/C:/Tools/eclipse/plugins/boundingbox.editor_1.0.0.201605292158.jar
-file:/C:/Tools/eclipse/plugins/boundingbox.tests_1.0.0.201605292158.jar
+# List of external plug-in models previously loaded. Timestamp: 1464604177050
+file:/C:/Tools/eclipse/plugins/boundingbox_0.1.0.201605292233.jar
+file:/C:/Tools/eclipse/plugins/boundingbox.edit_1.0.0.201605292233.jar
+file:/C:/Tools/eclipse/plugins/boundingbox.editor_1.0.0.201605292233.jar
+file:/C:/Tools/eclipse/plugins/boundingbox.tests_1.0.0.201605292233.jar
 file:/C:/Tools/eclipse/plugins/com.google.gdata_1.47.1_1.47.1.jar
 file:/C:/Tools/eclipse/plugins/com.google.gson_2.2.4.v201311231704.jar
 file:/C:/Tools/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar

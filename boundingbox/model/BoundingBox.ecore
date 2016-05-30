@@ -7,7 +7,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Move" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="distance" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MoveX" abstract="true" eSuperTypes="#//Move"/>
   <eClassifiers xsi:type="ecore:EClass" name="MoveY" abstract="true" eSuperTypes="#//Move"/>
