@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import platoon.Platoon;
 import platoon.PlatoonFactory;
 import platoon.PlatoonPackage;
+import platoon.Root;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public class PlatoonExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.platoon"));
-				Platoon root = PlatoonFactory.eINSTANCE.createPlatoon();
+				Root root = PlatoonFactory.eINSTANCE.createRoot();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

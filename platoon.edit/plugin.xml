@@ -7,7 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated platoon -->
+      <!-- @generated Platoon -->
       <factory
             uri="platoon"
             class="platoon.provider.PlatoonItemProviderAdapterFactory"

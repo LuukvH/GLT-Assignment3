@@ -72,26 +72,26 @@ public class PlatoonItemProviderAdapterFactory extends PlatoonAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link platoon.Platoon} instances.
+	 * This keeps track of the one adapter used for all {@link platoon.Root} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PlatoonItemProvider platoonItemProvider;
+	protected RootItemProvider rootItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link platoon.Platoon}.
+	 * This creates an adapter for a {@link platoon.Root}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPlatoonAdapter() {
-		if (platoonItemProvider == null) {
-			platoonItemProvider = new PlatoonItemProvider(this);
+	public Adapter createRootAdapter() {
+		if (rootItemProvider == null) {
+			rootItemProvider = new RootItemProvider(this);
 		}
 
-		return platoonItemProvider;
+		return rootItemProvider;
 	}
 
 	/**
@@ -118,26 +118,49 @@ public class PlatoonItemProviderAdapterFactory extends PlatoonAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link platoon.Constraints} instances.
+	 * This keeps track of the one adapter used for all {@link platoon.Platoon} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConstraintsItemProvider constraintsItemProvider;
+	protected PlatoonItemProvider platoonItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link platoon.Constraints}.
+	 * This creates an adapter for a {@link platoon.Platoon}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createConstraintsAdapter() {
-		if (constraintsItemProvider == null) {
-			constraintsItemProvider = new ConstraintsItemProvider(this);
+	public Adapter createPlatoonAdapter() {
+		if (platoonItemProvider == null) {
+			platoonItemProvider = new PlatoonItemProvider(this);
 		}
 
-		return constraintsItemProvider;
+		return platoonItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link platoon.Forward} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ForwardItemProvider forwardItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link platoon.Forward}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createForwardAdapter() {
+		if (forwardItemProvider == null) {
+			forwardItemProvider = new ForwardItemProvider(this);
+		}
+
+		return forwardItemProvider;
 	}
 
 	/**
@@ -187,26 +210,26 @@ public class PlatoonItemProviderAdapterFactory extends PlatoonAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link platoon.Forward} instances.
+	 * This keeps track of the one adapter used for all {@link platoon.Constraints} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ForwardItemProvider forwardItemProvider;
+	protected ConstraintsItemProvider constraintsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link platoon.Forward}.
+	 * This creates an adapter for a {@link platoon.Constraints}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createForwardAdapter() {
-		if (forwardItemProvider == null) {
-			forwardItemProvider = new ForwardItemProvider(this);
+	public Adapter createConstraintsAdapter() {
+		if (constraintsItemProvider == null) {
+			constraintsItemProvider = new ConstraintsItemProvider(this);
 		}
 
-		return forwardItemProvider;
+		return constraintsItemProvider;
 	}
 
 	/**
@@ -253,29 +276,6 @@ public class PlatoonItemProviderAdapterFactory extends PlatoonAdapterFactory imp
 		}
 
 		return leaderVehicleItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link platoon.Root} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RootItemProvider rootItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link platoon.Root}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRootAdapter() {
-		if (rootItemProvider == null) {
-			rootItemProvider = new RootItemProvider(this);
-		}
-
-		return rootItemProvider;
 	}
 
 	/**
@@ -377,15 +377,15 @@ public class PlatoonItemProviderAdapterFactory extends PlatoonAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
-		if (platoonItemProvider != null) platoonItemProvider.dispose();
+		if (rootItemProvider != null) rootItemProvider.dispose();
 		if (routeItemProvider != null) routeItemProvider.dispose();
-		if (constraintsItemProvider != null) constraintsItemProvider.dispose();
+		if (platoonItemProvider != null) platoonItemProvider.dispose();
+		if (forwardItemProvider != null) forwardItemProvider.dispose();
 		if (turnLeftItemProvider != null) turnLeftItemProvider.dispose();
 		if (turnRightItemProvider != null) turnRightItemProvider.dispose();
-		if (forwardItemProvider != null) forwardItemProvider.dispose();
+		if (constraintsItemProvider != null) constraintsItemProvider.dispose();
 		if (followingVehicleItemProvider != null) followingVehicleItemProvider.dispose();
 		if (leaderVehicleItemProvider != null) leaderVehicleItemProvider.dispose();
-		if (rootItemProvider != null) rootItemProvider.dispose();
 	}
 
 }

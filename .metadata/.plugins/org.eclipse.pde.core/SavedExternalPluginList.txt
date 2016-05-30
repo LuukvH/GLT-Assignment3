@@ -1,8 +1,8 @@
-# List of external plug-in models previously loaded. Timestamp: 1464604177050
-file:/C:/Tools/eclipse/plugins/boundingbox_0.1.0.201605292233.jar
-file:/C:/Tools/eclipse/plugins/boundingbox.edit_1.0.0.201605292233.jar
-file:/C:/Tools/eclipse/plugins/boundingbox.editor_1.0.0.201605292233.jar
-file:/C:/Tools/eclipse/plugins/boundingbox.tests_1.0.0.201605292233.jar
+# List of external plug-in models previously loaded. Timestamp: 1464626976367
+file:/C:/Tools/eclipse/plugins/boundingbox_0.1.0.201605301654.jar
+file:/C:/Tools/eclipse/plugins/boundingbox.edit_1.0.0.201605301558.jar
+file:/C:/Tools/eclipse/plugins/boundingbox.editor_1.0.0.201605301544.jar
+file:/C:/Tools/eclipse/plugins/boundingbox.tests_1.0.0.201605301607.jar
 file:/C:/Tools/eclipse/plugins/com.google.gdata_1.47.1_1.47.1.jar
 file:/C:/Tools/eclipse/plugins/com.google.gson_2.2.4.v201311231704.jar
 file:/C:/Tools/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar
@@ -1068,6 +1068,15 @@ file:/C:/Tools/eclipse/plugins/org.w3c.css.sac_1.3.1.v200903091627.jar
 file:/C:/Tools/eclipse/plugins/org.w3c.dom.events_3.0.0.draft20060413_v201105210656.jar
 file:/C:/Tools/eclipse/plugins/org.w3c.dom.smil_1.0.1.v200903091627.jar
 file:/C:/Tools/eclipse/plugins/org.w3c.dom.svg_1.1.0.v201011041433.jar
+file:/C:/Tools/eclipse/plugins/org.xtext.example.boundingbox_1.0.0.201605301532.jar
+file:/C:/Tools/eclipse/plugins/org.xtext.example.boundingbox.ide_1.0.0.201605301500.jar
+file:/C:/Tools/eclipse/plugins/org.xtext.example.boundingbox.tests_1.0.0.201605301457.jar
+file:/C:/Tools/eclipse/plugins/org.xtext.example.boundingbox.ui_1.0.0.201605301532.jar
+file:/C:/Tools/eclipse/plugins/org.xtext.example.boundingbox.ui.tests_1.0.0.201605301532.jar
+file:/C:/Tools/eclipse/plugins/platoon_0.1.0.201605301739.jar
+file:/C:/Tools/eclipse/plugins/platoon.edit_1.0.0.201605301648.jar
+file:/C:/Tools/eclipse/plugins/platoon.editor_1.0.0.201605301648.jar
+file:/C:/Tools/eclipse/plugins/platoon.tests_1.0.0.201605301532.jar
 file:/C:/Tools/eclipse/plugins/com.google.guava.source_15.0.0.v201403281430.jar
 file:/C:/Tools/eclipse/plugins/com.google.inject.source_3.0.0.v201312141243.jar
 file:/C:/Tools/eclipse/plugins/com.ibm.icu.source_54.1.1.v201501272100.jar

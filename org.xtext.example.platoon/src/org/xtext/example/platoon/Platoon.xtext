@@ -5,67 +5,59 @@ import "platoon"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Root returns Root:
-	'Root'
-	'{'
-		'platoon' platoon=[Platoon|EString]
-		'route' route=[Route|EString]
-		'constraints' constraints=[Constraints|EString]
-	'}';
+		platoon=Platoon
+		route=Route
+		constraints=Constraints;
 
 routeCommand returns routeCommand:
-	TurnLeft | TurnRight | Forward;
+	Forward | TurnLeft | TurnRight;
 
 Vehicle returns Vehicle:
 	FollowingVehicle | LeaderVehicle;
 
 Platoon returns Platoon:
-	'Platoon'
-	'{'
-		'leaderVehicle' leaderVehicle=[LeaderVehicle|EString]
-		('followingVehicle' '(' followingVehicle+=[FollowingVehicle|EString] ( "," followingVehicle+=[FollowingVehicle|EString])* ')' )?
-	'}';
+	'platoon:'
+		leaderVehicle=LeaderVehicle
+		(followingVehicle+=FollowingVehicle (followingVehicle+=FollowingVehicle)* )?;
 
 Route returns Route:
-	'Route'
-	'{'
-		'routeCommands' '{' routeCommands+=routeCommand ( "," routeCommands+=routeCommand)* '}' 
-	'}';
+	'route'
+	name=EString
+	':'
+		routeCommands+=routeCommand ( routeCommands+=routeCommand)*;
 
 Constraints returns Constraints:
-	{Constraints}
-	'Constraints'
-	'{'
-		('lbound' lbound=EInt)?
-		('ubound' ubound=EInt)?
-	'}';
+	'constraints:'
+		lbound=EInt '<=' 'headway' '<=' ubound=EInt;
 
 LeaderVehicle returns LeaderVehicle:
-	'LeaderVehicle'
-	'{'
-		'route' route=[Route|EString]
-	'}';
+	'LV'
+	name=EString
+		'route' route=[Route|EString];
 
 FollowingVehicle returns FollowingVehicle:
-	'FollowingVehicle'
-	'{'
-		'following' following=[Vehicle|EString]
-	'}';
+	'FV'
+	name=EString
+		'front' 'runner' following=[Vehicle|EString];
+
+EString returns ecore::EString:
+	STRING | ID;
+
+Forward returns Forward:
+	'forward'
+	'('
+		distance=EInt
+	')';
 
 TurnLeft returns TurnLeft:
 	{TurnLeft}
-	'TurnLeft'
+	'turn' 'Left'
 	;
 
 TurnRight returns TurnRight:
 	{TurnRight}
-	'TurnRight'
+	'turn' 'Right'
 	;
 
-Forward returns Forward:
-	'Forward'
-	'{'
-		'distance' '{' distance+=EInt ( "," distance+=EInt)* '}' 
-	'}';
-
 EInt returns ecore::EInt:
-	'-'? INT;
+	INT;

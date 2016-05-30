@@ -10,3 +10,6 @@ Require-Bundle: org.xtext.example.platoon,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.example.platoon.ide.contentassist.antlr,
+ org.xtext.example.platoon.ide.contentassist.antlr.internal
+

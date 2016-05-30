@@ -91,7 +91,8 @@ public class ForwardItemProvider extends routeCommandItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Forward_type");
+		Forward forward = (Forward)object;
+		return getString("_UI_Forward_type") + " " + forward.getDistance();
 	}
 	
 

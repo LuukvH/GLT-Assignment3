@@ -1074,4 +1074,12 @@ org.xtext.example.boundingbox.ide,1.0.0.qualifier,file:/C:/Users/laj/Documents/G
 org.xtext.example.boundingbox.tests,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/org.xtext.example.boundingbox.tests/,4,false
 org.xtext.example.boundingbox.ui,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/org.xtext.example.boundingbox.ui/,4,false
 org.xtext.example.boundingbox.ui.tests,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/org.xtext.example.boundingbox.ui.tests/,4,false
+org.xtext.example.platoon,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/org.xtext.example.platoon/,4,false
+org.xtext.example.platoon.ide,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/org.xtext.example.platoon.ide/,4,false
+org.xtext.example.platoon.tests,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/org.xtext.example.platoon.tests/,4,false
+org.xtext.example.platoon.ui,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/org.xtext.example.platoon.ui/,4,false
+org.xtext.example.platoon.ui.tests,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/org.xtext.example.platoon.ui.tests/,4,false
 platoon,0.1.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/platoon/,4,false
+platoon.edit,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/platoon.edit/,4,false
+platoon.editor,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/platoon.editor/,4,false
+platoon.tests,1.0.0.qualifier,file:/C:/Users/laj/Documents/GitHub/GLT-Assignment3/platoon.tests/,4,false

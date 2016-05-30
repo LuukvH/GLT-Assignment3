@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="PDEFormActionManager">
+	</section>
 	<section name="PluginExportWizard">
 		<item value="C:\Tools\eclipse" key="destination0"/>
 		<item value="C:\Tools\eclipse" key="destination1"/>
@@ -17,5 +19,7 @@
 		<item value="false" key="qualifier"/>
 		<item value="" key="alias"/>
 		<item value="" key="keystore"/>
+	</section>
+	<section name="quick_assist_proposal_size">
 	</section>
 </section>

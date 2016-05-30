@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import platoon.LeaderVehicle;
 import platoon.PlatoonPackage;
 
 /**
@@ -88,7 +89,10 @@ public class LeaderVehicleItemProvider extends VehicleItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_LeaderVehicle_type");
+		String label = ((LeaderVehicle)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_LeaderVehicle_type") :
+			getString("_UI_LeaderVehicle_type") + " " + label;
 	}
 	
 

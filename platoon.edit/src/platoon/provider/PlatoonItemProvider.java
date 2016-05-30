@@ -11,7 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -19,7 +20,10 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import platoon.Platoon;
+import platoon.PlatoonFactory;
 import platoon.PlatoonPackage;
 
 /**
@@ -57,54 +61,39 @@ public class PlatoonItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLeaderVehiclePropertyDescriptor(object);
-			addFollowingVehiclePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Leader Vehicle feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLeaderVehiclePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Platoon_leaderVehicle_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Platoon_leaderVehicle_feature", "_UI_Platoon_type"),
-				 PlatoonPackage.Literals.PLATOON__LEADER_VEHICLE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(PlatoonPackage.Literals.PLATOON__LEADER_VEHICLE);
+			childrenFeatures.add(PlatoonPackage.Literals.PLATOON__FOLLOWING_VEHICLE);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Following Vehicle feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFollowingVehiclePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Platoon_followingVehicle_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Platoon_followingVehicle_feature", "_UI_Platoon_type"),
-				 PlatoonPackage.Literals.PLATOON__FOLLOWING_VEHICLE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -140,6 +129,13 @@ public class PlatoonItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Platoon.class)) {
+			case PlatoonPackage.PLATOON__LEADER_VEHICLE:
+			case PlatoonPackage.PLATOON__FOLLOWING_VEHICLE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -153,6 +149,16 @@ public class PlatoonItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PlatoonPackage.Literals.PLATOON__LEADER_VEHICLE,
+				 PlatoonFactory.eINSTANCE.createLeaderVehicle()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PlatoonPackage.Literals.PLATOON__FOLLOWING_VEHICLE,
+				 PlatoonFactory.eINSTANCE.createFollowingVehicle()));
 	}
 
 	/**
